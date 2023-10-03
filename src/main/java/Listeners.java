@@ -4,14 +4,14 @@ import org.springframework.kafka.core.KafkaTemplate;
 
 public class Listeners {
 
-    private final String accountTopic = "msaccount";
+    private final String topicName = "msprocess";
 
     @Autowired
     private KafkaTemplate<String, TransactionData> kafkaTemplate;
 
     @KafkaListener(topics = "mscashdesc")
     public void cashDescListener(TransactionData transactionData) {
-        translateToTopic(accountTopic, transactionData);
+        translateToTopic(topicName, transactionData);
     }
 
     public void translateToTopic(String topicName, TransactionData transactionData) {
