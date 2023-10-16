@@ -1,3 +1,5 @@
+package com.example.demo;
+
 import lombok.Data;
 
 import java.math.BigDecimal;
